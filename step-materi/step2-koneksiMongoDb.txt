@@ -1,0 +1,16 @@
+# install mongose, ketikkan -> npm install --save mongoose
+# masukkan beberapa code di bawah untuk koneksi database ke file index.js atau server.js atau app.js
+
+// getting-started.js
+var mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost/test', {useNewUrlParser: true});
+
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  // we're connected!
+});
+
+# cek koneksi database dengan menjalankan server, ketikkan -> nodemon app.js
+# buat folder config berisikan file database.js
